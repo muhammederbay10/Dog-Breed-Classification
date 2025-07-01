@@ -1,0 +1,4 @@
+# Ignore training and test images
+Data/processed/train/
+Data/processed/test/
+Data/raw/
