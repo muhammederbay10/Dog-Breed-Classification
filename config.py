@@ -3,6 +3,7 @@ class Config:
     PROC_DATA_DIR = "data/processed"
     ZIP_FILENAME = "dog-breed-identification.zip"
     DATA_URL = "https://www.kaggle.com/c/dog-breed-identification/data"
+    MODEL_URL  = "https://kaggle.com/models/google/mobilenet-v2/TensorFlow2/130-224-classification/1"
     IMG_SIZE = 224
     NUM_CLASSES = 120
     UNIQUE_BREEDS = None
