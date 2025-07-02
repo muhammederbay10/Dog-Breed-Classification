@@ -1,7 +1,10 @@
-import tensorflow as tf 
+import tensorflow_hub as hub
 import matplotlib.pyplot as plt
-from src.data_pipeline import process_image, get_image_label, create_data_batches
+import matplotlib.image as mpimg
+from src.data_pipeline import create_data_batches
+from src.predict import load_and_preprocess_image, predict_breed
 from scripts.prepare_data import load_and_split_data
+from keras.models import load_model
 from config import Config
 
 # Get split data and class names
@@ -37,3 +40,26 @@ train_images, train_labels = next(train_data.as_numpy_iterator())
 show_25_images(train_images, train_labels)
 plt.show()
 
+# Load the model
+model = load_model(Config.MODEL_SAVE_PATH, custom_objects={'KerasLayer': hub.KerasLayer})
+
+# Load and preprocess the image
+img_path = "Data/processed/test/loka.jpg"
+img_array = load_and_preprocess_image(img_path)
+
+# Predict 
+breed, confidence = predict_breed(model, img_array, Config.UNIQUE_BREEDS)
+print(f"Predicted breed: {breed} ({confidence*100:.2f}% confidence)")
+
+# Load the original image (for visualization)
+img = mpimg.imread(img_path)
+
+# Plot the image
+plt.imshow(img)
+plt.axis("off")
+
+# Title with breed and confidence
+plt.title(breed, fontsize=14, color="green")
+
+# Show the image
+plt.show()
