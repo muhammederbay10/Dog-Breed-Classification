@@ -120,6 +120,7 @@ python main.py
 ## 📊 Evaluation
 
 * Accuracy: Varies by run (\~85% on validation)
+* ![Image](https://github.com/user-attachments/assets/6fba676d-4049-4cc8-9b6b-d2238e5eac4f)
 * Example prediction: `golden_retriever`
 
 ---
