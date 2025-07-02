@@ -130,4 +130,13 @@ python main.py
 
 If you found this project helpful or interesting, please consider giving it a ⭐ on GitHub!
 
-```
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Created by Muhammed (2025)
+
