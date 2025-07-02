@@ -36,6 +36,10 @@ def train_model():
               validation_data=valid_data,
               validation_freq=1,
               callbacks=[tensorboard, early_stopping])
+    
+    # Save the Model
+    model.save(Config.MODEL_SAVE_PATH)
+
     return model
 
 model = train_model()
