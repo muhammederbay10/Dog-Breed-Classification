@@ -62,23 +62,4 @@ def create_data_batches(x, y=None, batch_size=Config.BATCH_SIZE, valid_data=Fals
         data = data.shuffle(buffer_size=len(x))
         data_batch =data.map(get_image_label).batch(batch_size)
         return data_batch
-    
-   
-def show_25_images(images, labels):
-    """
-    Display 25 images and their labels from the data batch
-    """
-    # Setup the figure
-    plt.figure(figsize=(10, 10))
-
-    # Loop through 25 images
-    for i in range(25):
-        # Create subplot (5rows, 5columns)
-        plt.subplot(5+5+i+1)
-        # Plot the image
-        plt.imshow(images[i])
-        # Set the title of the subplot to the label
-        plt.title(Config.UNIQUE_BREEDS[labels[i].argmax()])
-        # Turn off the axis
-        plt.axis("off")
 
