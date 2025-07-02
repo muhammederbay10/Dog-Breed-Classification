@@ -7,22 +7,6 @@ from scripts.prepare_data import load_and_split_data
 from keras.models import load_model
 from config import Config
 
-
-import tensorflow as tf
-import tensorflow_hub as hub
-import numpy as np
-import matplotlib
-import sklearn
-import seaborn
-
-print(f"TensorFlow: {tf.__version__}")
-print(f"TensorFlow Hub: {hub.__version__}")
-print(f"Numpy: {np.__version__}")
-print(f"Matplotlib: {matplotlib.__version__}")
-print(f"Scikit-learn: {sklearn.__version__}")
-print(f"Seaborn: {seaborn.__version__}")
-
-
 # Get split data and class names
 split_data, class_names = load_and_split_data()
 x_train, x_val, y_train, y_val = split_data
