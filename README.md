@@ -38,7 +38,7 @@ Dog-Breed-Classification/
 ├── main.py                 # Loads model & predicts breed from new image
 ├── src/
 │   ├── data\_pipeline.py    # Data preprocessing & batch generation
-│   ├── model.py            # Build the CNN model
+│   ├── model.py            # Build the model
 │   ├── train.py            # Train the model
 │   ├── evaluate.py         # Evaluate trained model
 │   └── predict.py          # Predict from custom image
